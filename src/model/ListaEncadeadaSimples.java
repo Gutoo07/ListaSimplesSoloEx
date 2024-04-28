@@ -23,21 +23,21 @@ public class ListaEncadeadaSimples<T> {
 		ordena();
 	}
 	public No<T> get(int index) throws IllegalArgumentException {
-		
-		if (this.inicio == null) {
-			throw new IllegalArgumentException("Lista vazia.");
-		}
-		
-		No<T> buffer = this.inicio;
-		int i = 0;
-		while (i < index) {
-			buffer = buffer.getProximo();
-			i++;
-		}
-		if ( buffer == null ) {
-			throw new IllegalArgumentException("O indice informado nao existe.");
-		}
-		return buffer;
+			
+			if (this.inicio == null) {
+				throw new IllegalArgumentException("Lista vazia.");
+			}
+			
+			No<T> buffer = this.inicio;
+			int i = 0;
+			while (i < index) {
+				buffer = buffer.getProximo();
+				i++;
+			}
+			if ( buffer == null ) {
+				throw new IllegalArgumentException("O indice informado nao existe.");
+			}
+			return buffer;
 	}
 	public int index (T elemento) throws IllegalArgumentException {
 		if (this.inicio == null) {
@@ -48,7 +48,7 @@ public class ListaEncadeadaSimples<T> {
 			return index;
 		}
 		No<T> buffer = this.inicio;
-		while (buffer != null) {
+		while (buffer.getProximo() != null) {
 			index++;
 			buffer = buffer.getProximo();
 			if (buffer.getValor() == elemento) {
@@ -67,7 +67,6 @@ public class ListaEncadeadaSimples<T> {
 				this.inicio = novo;
 			} else {
 				this.inicio = novo;
-				novo.setProximo(null);
 			}
 		} else {
 			this.insert( this.get(--index) , elemento );

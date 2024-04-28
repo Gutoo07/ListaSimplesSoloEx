@@ -17,14 +17,21 @@ public class Metodos {
 		lista.append(3);
 		lista.append(5);
 		lista.append(2);
-		System.out.println(lista.toString());
+		
+		System.out.println(lista.toString());		
 		lista.toArray();
-		lista.ordena();
-		System.out.println(lista.toString());
-		lista.toArray();
+		
+		lista.ordena();		
+		
+		System.out.println(lista.toString());		
+		lista.toArray();		
+		
 		lista.appendOrdena(6);
+		
 		System.out.println(lista.toString());	
 		lista.toArray();
 
-	}
+		System.out.println(lista.toString());	
+
+		}
 }
